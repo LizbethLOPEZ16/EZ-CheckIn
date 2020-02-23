@@ -5,68 +5,74 @@
             {% block title %}EZ-CheckIn!
             {% endblock %}
         </title>
-        <meta charset="UTF-8">
-        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" name="viewport">
-       
+          <meta charset="UTF-8">
+         {% block ogMeta %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Oswald|Raleway&display=swap" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+        
         {% block stylesheets %}
-            <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,700&display=swap" rel="stylesheet">
-            <link href="css/estilos.min.css" rel="stylesheet">
+           
         {% endblock %}
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-            <div class="container">
+        <header class="main-header">
+            <nav class="navbar navbar-expand-lg navbar bg btn-black">
+             <div class="container">
                 <a class="navbar-brand" href="{{ path('app_home') }}"><img height="50" src="/images/ez-checkin.png" width="130" alt="EZ-CheckIn"></a>
                 <button aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarTogglerDemo02" data-toggle="collapse" type="button">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button><div align='center'>
 
                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link btn-outline-dark" href="">
                                 <i class="fas fa-envelope"></i>
                                 English US
                             </a>
                         </li>
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link btn-outline-dark" href="">
                                 <i class="fas fa-envelope"></i>
                                 MXN
                             </a>
                         </li>
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link btn-outline-dark" href="">
                                 <i class="fas"></i>
                                 Host a Home
                             </a>
                         </li>
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="">
+                            <a class="nav-link btn-outline-dark" href="">
                                 <i class="fas"></i>
                                 Home swap
                             </a>
                         </li>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ path('contacto') }}">
+                            <a class="nav-link btn-outline-dark" href="{{ path('contacto') }}">
                                 <i class="fas"></i>
                                 Help
                             </a>
                         </li></ul>
                         {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
                             <li class="nav-item">
-                                <a class="nav-link" href="#">
+                                <a class="nav-link btn-outline-dark" href="#">
                                     <i aria-hidden="true" class="fas fa-user"></i>
                                     {{ app.user.username }}
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="" class="nav-link">
+                                <a href="" class="nav-link btn-outline-dark">
                                     <i aria-hidden="true" class="fas fa-sign-out-alt"></i>
                                     Salir
                                 </a>
@@ -84,16 +90,22 @@
                                 </a>
                             </li>
                         {% endif %} 
-                    </ul>
+                     </ul>
                 </div>
-            </div>
+            </div></div>
         </nav>
+      </header>
       
         {% block body %}{% endblock %}
-         <footer><div align='center'>
-            <div class="container-fluid h-255">
-                <div class="row flex-column justify-content-center align-items-center h-25">
-                    <div>
+        <footer class="footer" class="mdc-layout-grid">
+        <div class="container">
+         <div class="row">
+                <div class="col-md-6"><div align='center'>
+                <img class="carro" height="100px " src="/images/ez-checkin.png">
+                </div></div>
+
+                 <div class="col-md-6 "><div align='center'>
+                    <div class="social-media">
                          <a href="https://www.facebook.com/EZ-Check-In-385209942121116/">
                             <img height="60px " src="/images/face.png" width="60px"/>
                         </a>
@@ -105,21 +117,19 @@
                         </a>
                         <div>
                         <small>
-                                {{ "now"|date("Y") }} Ez-CheckIn, Todos los derechos reservados. 
-                                 <p><strong><a href="https://mdbootstrap.com/docs/jquery/javascript/carousel/"
-                                target="_blank">Terminos y Condiciones, Politica y Privacidad</a>.</p> 
+                                {{ "now"|date("Y") }} Ez-CheckIn.
+                                <p>All Rights Reserved.</p> 
                         </small>
-                        </div>
-                    </div>
-                </div></div>
-            </footer>
+                    </div></div>
+            </div>
+         </div>
+        </footer><hr class="my-4">
+        
         {% block javascripts %}
-          <script src="https://kit.fontawesome.com/c3eaa7a11b.js"></script>
-          <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-          <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-          <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-          <script src="{{ asset('js/quagga.min.js') }}"></script>
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+           
         {% endblock %}
-        </body>
     </body>
 </html>

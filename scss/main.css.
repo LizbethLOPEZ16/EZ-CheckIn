@@ -1,74 +1,75 @@
 body {
-  margin: 0;
-}
+  margin: 0; }
+
 header.main-header {
-  background-color: #000000;
-}
+  background-color: #000000; }
+
 footer.footer {
   background-color: #000000;
   padding-top: 50px;
-  justify-content: start;
-}
+  justify-content: start; }
+
 div.card-deck {
-  padding: 0px 50px 30px;
-}
+  padding: 0px 50px 30px; }
+
 div.col-12 {
-  background-color: #660020;
-}
+  background-color: #660020; }
+
 small {
   color: #ffffff;
-  font-size: 100%;
-}
+  font-size: 100%; }
+
 div.social-media {
-  margin-top: 50px;
-}
+  margin-top: 50px; }
+
 div.contenedor {
   transform: scale(0.9);
-  font-size: 1.2em;
-}
+  font-size: 1.2em; }
+
 .contenedor {
-  overflow: hidden;
-}
+  overflow: hidden; }
+
 .contenedores {
   margin-top: 3em;
   margin-left: 3em;
-  margin-right: 3em;
-}
+  margin-right: 3em; }
+
 button.navbar-toggler {
   border-color: #660033;
-  background-color: #660033;
-}
+  background-color: #660033; }
+
 .navbar-nav .nav-link {
-  color: #ffffff;
-}
+  color: #ffffff; }
+
 label {
   color: #ffffff;
-  font-size: 25px;
-}
+  font-size: 25px; }
+
 .btn {
   color: #ffffff;
-  font-size: 25px;
-}
+  font-size: 25px; }
+
 .btn-danger {
   color: #fff;
   background-color: #660033;
   border-color: #660033;
-  font-size: 30px;
-}
+  font-size: 30px; }
+
 a {
   color: #660033;
-  font-size: 20px;
-}
+  font-size: 20px; }
+
 h1 {
-  color: #660033;
-}
+  color: #660033; }
+
 h {
-  font-size: 23px;
-}
+  font-size: 23px; }
+
 .my-4 {
   margin-bottom: 1.8rem !important;
-  background-color: #660033;
-}
+  background-color: #660033; }
+
 img.carro {
-  padding-top: 12px;
-}
+  padding-top: 12px; }
+
+/*# sourceMappingURL=main.css..map */

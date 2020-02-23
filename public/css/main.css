@@ -2,10 +2,10 @@ body {
   margin: 0;
 }
 header.main-header {
-  background-color: #000000;
+  background-color: #ffffff;
 }
 footer.footer {
-  background-color: #000000;
+  background-color: #ffffff;
   padding-top: 50px;
   justify-content: start;
 }
@@ -13,10 +13,10 @@ div.card-deck {
   padding: 0px 50px 30px;
 }
 div.col-12 {
-  background-color: #660020;
+  background-color: #100cf1;
 }
 small {
-  color: #ffffff;
+  color: #100cf1;
   font-size: 100%;
 }
 div.social-media {
@@ -35,11 +35,11 @@ div.contenedor {
   margin-right: 3em;
 }
 button.navbar-toggler {
-  border-color: #660033;
-  background-color: #660033;
+  border-color: #100cf1;
+  background-color: #100cf1;
 }
 .navbar-nav .nav-link {
-  color: #ffffff;
+  color: #100cf1;
 }
 label {
   color: #ffffff;
@@ -51,23 +51,21 @@ label {
 }
 .btn-danger {
   color: #fff;
-  background-color: #660033;
-  border-color: #660033;
   font-size: 30px;
 }
-a {
-  color: #660033;
-  font-size: 20px;
+h4 {
+  font-size: 1rem;
+  margin: 10px 10px 10px;
 }
 h1 {
-  color: #660033;
+  color: #100cf1;
 }
 h {
   font-size: 23px;
 }
 .my-4 {
   margin-bottom: 1.8rem !important;
-  background-color: #660033;
+  background-color: #bdebf7;
 }
 img.carro {
   padding-top: 12px;
