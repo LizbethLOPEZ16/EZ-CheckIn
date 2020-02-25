@@ -2,25 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Phone;
+use App\Entity\Person;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Phone|null find($id, $lockMode = null, $lockVersion = null)
- * @method Phone|null findOneBy(array $criteria, array $orderBy = null)
- * @method Phone[]    findAll()
- * @method Phone[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Person|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Person|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Person[]    findAll()
+ * @method Person[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PhoneRepository extends ServiceEntityRepository
+class PersonRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Phone::class);
+        parent::__construct($registry, Person::class);
     }
 
     // /**
-    //  * @return Phone[] Returns an array of Phone objects
+    //  * @return Person[] Returns an array of Person objects
     //  */
     /*
     public function findByExampleField($value)
@@ -37,7 +37,7 @@ class PhoneRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Phone
+    public function findOneBySomeField($value): ?Person
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
