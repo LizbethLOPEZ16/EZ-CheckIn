@@ -24,23 +24,3 @@ services:
     tags: ["controller.service_arguments"]
   # add more service definitions when explicit configuration is needed
   # please note that last definitions always *replace* previous ones
- admin.user:
-        class: App\Admin\UserAdmin
-        arguments: [~, App\Entity\User, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: User }
-        public: true
-
-    admin.account:
-        class: App\Admin\AccountAdmin
-        arguments: [~, App\Entity\Account, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Account }
-        public: true
-
-    admin.student:
-        class: App\Admin\StudentAdmin
-        arguments: [~, App\Entity\Student, ~]
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: admin, label: Student }
-        public: true
