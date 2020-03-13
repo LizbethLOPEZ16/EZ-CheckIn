@@ -31,35 +31,42 @@
                  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark" href="">
-                                <i class="fas fa-envelope"></i>
-                                English US
+                            <a class="nav-link btn-outline-dark" href="/">
+                                <i class="fas "></i>
+                                Home
                             </a>
                         </li>
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark" href="">
-                                <i class="fas fa-envelope"></i>
-                                MXN
+                            <a class="nav-link btn-outline-dark" href="/stays">
+                                <i class="fas "></i>
+                                Stays
                             </a>
                         </li>
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark" href="">
+                            <a class="nav-link btn-outline-dark" href="/host">
                                 <i class="fas"></i>
                                 Host a Home
                             </a>
                         </li>
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark" href="">
+                            <a class="nav-link btn-outline-dark" href="/subscribe">
                                 <i class="fas"></i>
-                                Home swap
+                                Subscribe
+                            </a>
+                        </li>
+                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-dark" href="/about">
+                                <i class="fas"></i>
+                                About
                             </a>
                         </li>
                     <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link btn-outline-dark" href="{{ path('contacto') }}">
+                            <a class="nav-link btn-outline-dark" href="/help">
                                 <i class="fas"></i>
                                 Help
                             </a>
@@ -100,13 +107,13 @@
         <footer class="footer" class="mdc-layout-grid">
         <div class="container">
          <div class="row">
-                <div class="col-md-6"><div align='center'>
-                <img class="carro" height="100px " src="/images/ez-checkin.png">
-                </div></div>
+                <div class="col-md-4">
+                    <img class="card-img-top" src="/images/ez-checkin.png" alt="wine">
+                </div>
 
-                 <div class="col-md-6 "><div align='center'>
+                 <div class="col-md-4 "><div align='center'>
                     <div class="social-media">
-                         <a href="https://www.facebook.com/EZ-Check-In-385209942121116/">
+                        <a href="https://www.facebook.com/EZ-Check-In-385209942121116/">
                             <img height="60px " src="/images/face.png" width="60px"/>
                         </a>
                         <a href="https://www.instagram.com/ez_checkin/">
@@ -115,21 +122,64 @@
                         <a href="https://www.Twitter.com/ez-checkin1/">
                             <img height="60px " src="/images/Twi.png" width="60px"/>
                         </a>
-                        <div>
+                    </div></br>
                         <small>
-                                {{ "now"|date("Y") }} Ez-CheckIn.
-                                <p>All Rights Reserved.</p> 
+                                {{ "now"|date("Y") }} EZ-CheckIn. 
+                                 <p>All Rights Reserved.</p> 
                         </small>
-                    </div></div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 "><div align='center'>
+                    <div class="subs">
+                    <a class="card-img-top" href="/subscribe"><img height="150" src="/images/subs.png" alt="subs">
+                     </div></br>
+                     <small>
+                        <p>Phone: (664) 477 1836 </br> 
+                        Email: info@ezcheckin.com </p> 
+                     </small>
+                    </div></a>
+                </div>
+                </div>
             </div>
          </div>
-        </footer><hr class="my-4">
+        </footer>
         
         {% block javascripts %}
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-           
+           <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            var captionText = document.getElementById("caption");
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+            </script>
+             
         {% endblock %}
     </body>
 </html>

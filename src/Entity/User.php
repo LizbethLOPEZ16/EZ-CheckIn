@@ -50,13 +50,7 @@ class User implements UserInterface, \JsonSerializable, \Serializable
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\ParentStudent", mappedBy="parent")
      */
-    private $parentStudents;
-
-    public function __construct()
-    {
-        $this->parentStudents = new ArrayCollection();
-    }
-
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -163,34 +157,4 @@ class User implements UserInterface, \JsonSerializable, \Serializable
         return $this;
     }
 
-    /**
-     * @return Collection|ParentStudent[]
-     */
-    public function getParentStudents(): Collection
-    {
-        return $this->parentStudents;
-    }
-
-    public function addParentStudent(ParentStudent $parentStudent): self
-    {
-        if (!$this->parentStudents->contains($parentStudent)) {
-            $this->parentStudents[] = $parentStudent;
-            $parentStudent->setParent($this);
-        }
-
-        return $this;
-    }
-
-    public function removeParentStudent(ParentStudent $parentStudent): self
-    {
-        if ($this->parentStudents->contains($parentStudent)) {
-            $this->parentStudents->removeElement($parentStudent);
-            // set the owning side to null (unless already changed)
-            if ($parentStudent->getParent() === $this) {
-                $parentStudent->setParent(null);
-            }
-        }
-
-        return $this;
-    }
 }

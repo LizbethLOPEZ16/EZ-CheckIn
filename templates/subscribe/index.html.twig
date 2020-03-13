@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SubscribeController!{% endblock %}
+
+{% block body %}
+<div class="contenedor">
+ <div class="row">
+            <div class="col-md-5">
+            <div class="card-deck">
+          
+            <form id="contact-form" class="contact" name="contact-form"  method="post" action="enviarsubs.php">
+            <div class="form-group">
+             <h1> SUBSCRIBE!</h1>
+            <p>Name:</p>
+            <input type="text" name="nombre" class="form-control name-field" required="required" placeholder="">
+            </div>
+            <div class="form-group">
+            <p>Email:</p>
+            <input type="email" name="email" class="form-control mail-field" required="required" placeholder="">
+            </div>
+            <div class="form-group">
+            <p>Message:</p>
+            <textarea name="mensaje" id="mensaje" required="required" class="form-control" rows="5" placeholder="Message">
+            </textarea>
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Send</button>
+            </div>
+        </form>
+            </div></div>
+
+            <div class="col-md-7">
+              <div class="card-publi">
+                <img class="card-img-top" src="/images/slide5.png" alt="Card image cap">
+              </div>
+            </div>
+ </div>
+ </div>
+{% endblock %}
